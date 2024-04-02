@@ -11,11 +11,11 @@ The default page provides information about the author.
 
 ## Download
 
-You can download and run container from [dockerhub](https://hub.docker.com/r/maxenv/study_raport_1)
+You can download and run container from [dockerhub](https://hub.docker.com/r/maxenv/web100)
 using command:
 
 ```
-docker run -d -p 8080:8080 maxenv/study_raport_1:v1
+docker run -d -p 8080:8080 maxenv/web100:v1
 ```
 
 ## Build
