@@ -18,13 +18,14 @@ EXPOSE 8080
 
 CMD [ "npm", "start" ]
 
-# Stage 2 
-FROM nginx:latest 
 
-COPY --from=stage1 /app /usr/share/nginx/html
-EXPOSE 80
+# # Stage 2 
+# FROM nginx:latest 
 
-HEALTHCHECK --interval=10s --timeout=1s \
-    CMD curl -f http://localhost:80/ || exit 1
+# COPY --from=stage1 /app /usr/share/nginx/html
+# EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+# HEALTHCHECK --interval=10s --timeout=1s \
+#     CMD curl -f http://localhost:80/ || exit 1
+
+# CMD ["nginx", "-g", "daemon off;"]
