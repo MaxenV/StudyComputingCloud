@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.2
 
 # Stage 1: Kompilacja aplikacji w języku Go
-FROM golang:1.20 AS build
+FROM golang:1.23.6 AS build
 
 RUN --mount=type=cache,target=/root/.cache/go-build apt-get update && apt-get install -y tzdata git
 
@@ -12,7 +12,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build CGO_ENABLED=0 go build -a -l
 # Stage 2: Utworzenie obrazu kontenera opartego na scratch
 FROM scratch
 
-ADD alpine-minirootfs-3.19.1-x86_64.tar /
+ADD alpine-minirootfs-3.21.2-x86_64.tar.gz /
 
 COPY --from=build /server /server
 
