@@ -95,6 +95,6 @@ jobs:
             echo "No critical or high vulnerabilities found. Pushing image to GHCR."
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner}} --password-stdin
             docker pull maxenv/server-image:${{ steps.meta.outputs.version }}
-            docker tag maxenv/server-image:${{ steps.meta.outputs.version }} ghcr.io/${{ vars.GH_USERNAME }}/server-image:${{ github.sha }}
+            docker tag maxenv/server-image:${{ steps.meta.outputs.version }} ghcr.io/${{ vars.GH_USERNAME }}/StudyComputingCloud:${{ github.sha }}
             docker push ghcr.io/${{ vars.GH_USERNAME }}/server-image:${{ github.sha }}
           fi
